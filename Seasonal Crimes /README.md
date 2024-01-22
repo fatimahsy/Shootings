@@ -2,9 +2,8 @@
 
 ## Overview
 
-This repo provides students with a foundation for their own projects associated with *Telling Stories with Data*. You do not need every aspect for every paper and you should delete aspects that you do not need.
+This repo contains code for my paper on the nuber of shootings in Toronto for 2014-2019. various aspects were analyzed in this paper. No LLM's were used. 
 
-To use this folder, click the green "Code" button", then "Download ZIP". Move the downloaded folder to where you want to work on your own computer, and then modify it to suit.
 
 ## File Structure
 
