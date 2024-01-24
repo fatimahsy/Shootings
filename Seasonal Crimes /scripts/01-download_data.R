@@ -1,5 +1,5 @@
 #### Preamble ####
-# Purpose: Downloads and saves the data from opendatatoronto
+# Purpose: Downloads and saves the data from the opendatatoronto package 
 # Author: Fatimah Yunusa
 # Date: 23 January 2024
 # Contact: fatimah.yunusa@mail.utoronto.ca
@@ -9,12 +9,12 @@
 
 
 #### Workspace setup ####
+install.packages("opendatatoronto")
+install.packages("dplyr")
+install.packages("tidyverse")
 library(tidyverse)
 library(dplyr)
 library(opendatatoronto)
-
-shooting_data_raw <- read.csv("shooting_data.csv", header = TRUE, sep = ",")
-
 
 #### Download data ####
 #from https://open.toronto.ca/dataset/police-annual-statistical-report-shooting-occurrences/
@@ -30,17 +30,13 @@ resources <- list_package_resources("f29feb49-ceb1-44bf-a2b6-5fc6a0e6147a")
 datastore_resources <- filter(resources, tolower(format) %in% c('csv', 'geojson'))
 
 # load the first datastore resource as a sample
-data <- filter(datastore_resources, row_number()==1) %>% get_resource()
-data
-
-shooting_data_raw <-get_resource(resource ="b4fd5f2f-fe0d-4229-af47-d87d91fc14ce")
-shooting_data_raw
+shooting_data <- filter(datastore_resources, row_number()==1) %>% get_resource()
+shooting_data
 
 #### Save data ####
-# [...UPDATE THIS...]
-# change the_raw_data to whatever name you assigned when you downloaded it.
-write.csv(shooting_data_raw, "inputs/data/shooting_data_raw.csv") 
 
-         
-shooting_data_raw <- read.csv("shooting_data.csv", header = TRUE, sep = ",")
+write_csv(
+  x = shooting_data,
+  file = "inputs/data/shooting_data.csv")
+
 
