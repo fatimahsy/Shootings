@@ -26,7 +26,7 @@ generate_simulated_data <- function() {
 
 #### Test data ####
 
-# Check if the dimensions are as expected
+# Check if the dimensions are as seen 
 expect_equal(nrow(simulated_data), 270)
 expect_equal(ncol(simulated_data), 3)
 
