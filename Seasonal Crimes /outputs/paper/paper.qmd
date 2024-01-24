@@ -27,15 +27,15 @@ library(opendatatoronto)
 
 # Introduction
 
-You can and should cross-reference sections and sub-sections. 
+Over the years, having having data that describes and shows explicity the number of shootings that have occured has proven to be extremely valuable. It it provides information about how well a community is doing, law enforcement efficiency and the general well being of the area. In terms of Toronto, information about shooting occurrences will help shape policy and inform law makers and community shareholders where to focus their attention on. This paper focuses on the shooting occurrences between 2014-2019 in Toronto and aims to analyse shooting occurrences and their geographical locations between this time period.
 
-The remainder of this paper is structured as follows. @sec-data....
-
+It is important to note that current literature on this issue does not go beyond the surface of the issue, but rather, it just focuses on the number and the general trend. This study aims to bridge the gap and provide a nuanced and detailed explanation as to why these trends occur. This paper is structured using the following headings:Data,Results, Discussion & Conclusion. The Data section focuses on providing a brief explanation of the data and how they were obtained from `opendatatoronto` [@citeOpenDataToronto] including a brief discussion of the data cleaning process.The results secton will focus on the trends found after performing statistical analysis. The discussion section will provide further insight and detail onto the results of the analysis shown in the results section. Lastly, the conclusion section will sum everything up and highlight the most important findings of this paper. 
 
 
 # Data {#sec-data}
 
-Some of our data is of penguins (@fig-bills), from @palmerpenguins.
+Throughout this paper, we use data that has been obtained from the city of Toronto's `opendatatoronto` [@citeOpenDataToronto]. Mainly, we used the `Police Annual Statistical Report - Shooting Occurrences, 2022` [@citeData]. To collect and analyse this data, we use the Statistical program `R` [@citeR] and additional packages such as: `tidyverse` [@citeTidyverse],`ggplot2` [@citeGGPlot2], `knitr` [@citeKnitR], `janitor` [@citeJanitor],`readr` [@citeReadR], `stringr` [@citeStringR], `here` [@citeHere], `kableExtra` [@citeKable],`lubridate` [@citeLubridate], `dplyr` [@citeDplyr], and finally `tibble` [@citeTibble]. 
+
 
 ```{r}
 #| label: fig-bills

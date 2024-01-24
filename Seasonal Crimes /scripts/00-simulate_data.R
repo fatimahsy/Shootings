@@ -5,7 +5,7 @@
 # Contact: fatimah.yunusa@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: 
-# Any other information needed? 
+
 
 
 #### Workspace setup ####

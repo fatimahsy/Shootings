@@ -13,6 +13,7 @@ library(tidyverse)
 library(dplyr)
 library(opendatatoronto)
 
+shooting_data_raw <- read.csv("shooting_data.csv", header = TRUE, sep = ",")
 
 
 #### Download data ####
@@ -38,6 +39,8 @@ shooting_data_raw
 #### Save data ####
 # [...UPDATE THIS...]
 # change the_raw_data to whatever name you assigned when you downloaded it.
-write_csv(shooting_data_raw, "inputs/data/shooting_data_raw.csv") 
+write.csv(shooting_data_raw, "inputs/data/shooting_data_raw.csv") 
 
          
+shooting_data_raw <- read.csv("shooting_data.csv", header = TRUE, sep = ",")
+
