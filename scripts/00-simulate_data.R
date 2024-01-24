@@ -16,7 +16,7 @@ library(tibble)
 #### Simulate data ####
 
 
-# Create a simulated dataset
+# Create a simulated data set
 set.seed(300)
 years <- rep(2014:2019, each = 1)  # Years 2014 to 2019
 crime_counts <- sample(50:100, 6, replace = TRUE)  # Simulated crime counts

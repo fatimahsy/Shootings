@@ -1,13 +1,13 @@
 ---
 title: "How Has The Number Of Shootings in Toronto Changed?"
-subtitle: ""
+subtitle: "An Analysis on the Implications of Dataset Bias"
 author: 
   - Fatimah Yunusa
 
 thanks: "Code and data are available at: https://github.com/fatimahsy/Shootings.git"
 date: 23 January 2024
 date-format: long
-abstract: "Recently, Canada has been named the safest country in the world. A major component of Canada's safety comes from the safety of Toronto. Data detailing the number of shootings that have occured between the years of 2014 to 2019 have been obtained an will be thouroughly analysed within this paper through the use of various figures. Our findings show that in general, the number of shootings have increased in Toronto. From this paper, we learn that although Canada is considered a safer county overall, the number of shootings in Toronto have increased and we also learnt that datasets do have certain biases attached to them. "
+abstract: "Recently, Canada has been named the safest country in the world. A major component of Canada's safety comes from the safety of Toronto. Data detailing the number of shootings that have occured between the years of 2014 to 2019 have been obtained an will be thouroughly analysed within this paper through the use of various figures. Our findings show that in general, the number of shootings have increased in Toronto. From this paper, we learn that although Canada is considered a safer county overall, the number of shootings in Toronto have increased and we also learnt that datasets do have certain biases attached to them. This paper will also emphasise the discrepancies and biacies that exist within the crime reporting sphere."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -22,49 +22,40 @@ library(tidyverse)
 library(palmerpenguins)
 library(knitr)
 library(opendatatoronto)
-```
 
+package <- show_package("f29feb49-ceb1-44bf-a2b6-5fc6a0e6147a")
+package
+
+resources <- list_package_resources("f29feb49-ceb1-44bf-a2b6-5fc6a0e6147a")
+resources
+
+shooting_data <- get_resource(resource ="b4fd5f2f-fe0d-4229-af47-d87d91fc14ce")
+shooting_data
+```
 
 # Introduction
 
 Over the years, having having data that describes and shows explicitly the number of shootings that have occurred has proven to be extremely valuable. It it provides information about how well a community is doing, law enforcement efficiency and the general well being of the area. In terms of Toronto, information about shooting occurrences will help shape policy and inform law makers and community shareholders where to focus their attention on. This paper focuses on shooting occurrences between 2014-2019 in Toronto and aims to analyse shooting occurrences and their geographical locations between this time period. 
 
-It is important to note that current literature on this issue does not go beyond the surface of the issue, but rather, it just focuses on the number and the general trend. This study aims to bridge the gap and provide a nuanced and detailed explanation as to why these trends occur. This paper is structured using the following headings:Data,Results, Discussion & Conclusion. The Data section focuses on providing a brief explanation of the data and how they were obtained from `opendatatoronto` [@citeOpenDataToronto] including a brief discussion of the data cleaning process.The results section will focus on the trends found after performing statistical analysis. The discussion section will provide further insight and detail onto the results of the analysis shown in the results section. Lastly, the conclusion section will sum everything up and highlight the most important findings of this paper. 
-
+It is important to note that current literature on this issue does not go beyond the surface of the issue, but rather, it just focuses on the number and the general trend. This study aims to bridge the gap and provide a nuanced and detailed explanation as to why these trends occur. This paper is structured using the following headings:Data,Discussion & Conclusion. The Data section focuses on providing a brief explanation of the data and how they were obtained from `opendatatoronto` [@citeOpenDataToronto] including a brief discussion of the data cleaning process this section will focus on the trends found after performing statistical analysis. The discussion section will provide further insight and detail onto the results of the analysis and dicuss the implications of the data that is missing wthin this dataset. Lastly, the conclusion section will sum everything up and highlight the most important findings of this paper. 
 
 # Data {#sec-data}
 
 Throughout this paper, we use data that has been obtained from the city of Toronto's `opendatatoronto` [@citeOpenDataToronto]. Mainly, we used the `Police Annual Statistical Report - Shooting Occurrences, 2022` [@citeData]. To collect and analyse this data, we use the Statistical program `R` [@citeR] and additional packages such as: `tidyverse` [@citeTidyverse],`ggplot2` [@citeGGPlot2], `knitr` [@citeKnitR], `janitor` [@citeJanitor],`readr` [@citeReadR], `stringr` [@citeStringR], `here` [@citeHere], `kableExtra` [@citeKable],`lubridate` [@citeLubridate], `dplyr` [@citeDplyr], and finally `tibble` [@citeTibble]. 
 
+ The report `Police Annual Statistical Report - Shooting Occurrences, 2022` [@citeData] contains data on the number of shootings in Toronto from 2014-2019.The main data features and variables of the data set we will be focusing on are: OccurredYear, GeoDivision, & count. In this data set with 96 observations, they categorize a shooting occurrences any incident which a projectile is discharged from a firearm `Police Annual Statistical Report - Shooting Occurrences, 2022` [@citeData]. This data is collected by police all around the city. They follow strict reporting rules and ensure their accounts and data collection is accurate. 
+ 
+In spite of this, the data consists of many issues which are deep rooted in the system. The data might be accurate in terms of collection but the issue with these reported shootings comes from many socioeconomic and institutional biases that have existed within the system.If this data was grouped according to race, it would tell a completely different story because colored people are more likely t be stopped by the the police. The implications of this act morose like selection bias where your results are more likely to be one thing as a result of respondents being of a particular group or having similar traits.This means that our data even though is accurate, stems from many biases.It is important to note that even with a biased data set, we are able to deduce many things from it.
 
-
-# Results
-
-
-# Discussion
-
-## First discussion point {#sec-first-point}
-
-## Second discussion point
-
-## Third discussion point
-
-## Weaknesses and next steps
-
-For this paper, the many weaknesses lie in the dataset it self 
+ This data includes six variables and 96 observations. the first two variables _id and Index are identifier variables. the third variable OccuredYear is the year the reported shooting took place and for our data it is between 2014 - 2019. The next variable GeoDivision is predetermined geographic zone of the police division that the shooting was reported in.The next variable Category represents what kind of crime occurred and for our analysis purposes, this variable is always a shooting occurrence.The last variable is count which counts the number of shootings in that year and division. A sample view of their data set we used is include below. 
 
 \newpage
+```{r echo=FALSE}
+head(shooting_data)
+```
 
-
-
-
-\appendix
-
-
-
-# Appendix {-}
-
-
+ 
+\newpage
 
 
 \newpage
