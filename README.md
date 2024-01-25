@@ -1,14 +1,14 @@
 # Shootings
 
-## Overview
+## 📌 Overview
 
 This repo contains code used in the analysis of the number of shootings in Toronto for 2014-2019 and the implications of data set bias.Various aspects were analyzed in this paper.
 
-## LLM Usage
+## 🤖 LLM Usage
 
 No LLM's were used.
 
-## File Structure
+## 🗂️ File Structure
 
 The repo is structured as:
 
